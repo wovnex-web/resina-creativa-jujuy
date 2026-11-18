@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resina Creativa Jujuy · Curso de resina epóxica desde cero</title>
+<meta name="description" content="Aprendé resina epóxica desde cero con un curso online paso a paso: materiales, preparación y mezcla, técnicas básicas y tus primeros proyectos.">
+<meta name="theme-color" content="#2e1830">
+<meta property="og:title" content="Resina Creativa Jujuy · Aprendé resina epóxica desde cero">
+<meta property="og:description" content="Un curso online para conocer los materiales, aprender las técnicas básicas y empezar a crear tus propios proyectos.">
+<meta property="og:image" content="img/ig/post12.jpg">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+<link rel="apple-touch-icon" href="img/ig/perfil.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+  :root{
+    --cream:#fbf6f1;
+    --blush:#f7e6ec;
+    --petal:#f1d4df;
+    --plum:#2e1830;
+    --ink:#3b2a3a;
+    --muted:#6f5d6c;
+    --violet:#6b3fa0;
+    --rose:#d6457a;
+    --rose-dark:#b8325f;
+    --gold:#c79a3e;
+    --line:#ead9de;
+    --radius:22px;
+    --shadow:0 24px 60px -24px rgba(46,24,48,.35);
+    --wrap:min(100% - 40px, 1160px);
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  ::selection{background:var(--petal);color:var(--plum)}
+  :focus-visible{outline:3px solid var(--violet);outline-offset:4px;border-radius:6px}
+  .wrap{width:var(--wrap);margin-inline:auto}
+  .serif{font-family:'Fraunces',Georgia,serif;font-optical-sizing:auto}
+  em.accent{font-style:italic;color:var(--rose);font-family:'Fraunces',Georgia,serif;font-weight:400}
+
+  /* ---------- botones ---------- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:56px;padding:0 28px;border-radius:999px;font-weight:700;font-size:16.5px;text-decoration:none;letter-spacing:.01em;transition:transform .25s ease, box-shadow .25s ease, background-color .25s ease}
+  .btn svg{width:18px;height:18px;transition:transform .25s ease}
+  .btn:hover svg{transform:translateX(4px)}
+  .btn-primary{background:var(--rose);color:#fff;box-shadow:0 14px 30px -12px rgba(214,69,122,.7)}
+  .btn-primary:hover{background:var(--rose-dark);transform:translateY(-2px);box-shadow:0 18px 36px -12px rgba(214,69,122,.8)}
+  .btn-ghost{background:transparent;color:var(--plum);border:1.5px solid rgba(46,24,48,.2)}
+  .btn-ghost:hover{border-color:var(--plum);transform:translateY(-2px)}
+  .btn-light{background:#fff;color:var(--plum)}
+  .btn-light:hover{transform:translateY(-2px);background:var(--blush)}
+  .note{font-size:13.5px;color:var(--muted);display:flex;align-items:center;gap:.45rem;margin-top:14px}
+  .note svg{width:15px;height:15px;flex:none}
+
+  /* ---------- barra superior ---------- */
+  .topbar{background:var(--plum);color:#f6e9ee;font-size:13.5px;letter-spacing:.02em}
+  .topbar .wrap{display:flex;justify-content:center;gap:10px 26px;flex-wrap:wrap;padding:9px 0;text-align:center}
+  .topbar b{color:#fff}
+  .topbar span{display:inline-flex;align-items:center;gap:8px}
+  .topbar span+span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--gold);margin-right:18px}
+
+  /* ---------- nav ---------- */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(251,246,241,.82);backdrop-filter:saturate(160%) blur(14px);-webkit-backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+  header.nav.scrolled{border-bottom-color:var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .brand img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 0 0 1.5px var(--petal)}
+  .brand span{font-family:'Fraunces',Georgia,serif;font-size:20px;font-weight:600;color:var(--plum);line-height:1.1}
+  .brand small{display:block;font-family:'DM Sans',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--rose)}
+  .nav-links{display:flex;align-items:center;gap:30px}
+  .nav-links a{text-decoration:none;font-weight:500;font-size:15px;color:var(--ink);position:relative;white-space:nowrap}
+  .brand span{white-space:nowrap}
+  @media (max-width:1020px){.nav-links{gap:20px}.nav-links a[href="#instagram"]{display:none}}
+  .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1.5px;background:var(--rose);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+  .nav-links a:not(.btn):hover::after{transform:scaleX(1)}
+  .nav-links .btn{min-height:44px;padding:0 20px;font-size:14.5px;color:#fff}
+  .ig-icon{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1.5px solid var(--line);transition:background .25s,border-color .25s}
+  .ig-icon:hover{background:var(--blush);border-color:var(--petal)}
+  .ig-icon svg{width:19px;height:19px}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding:64px 0 96px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:720px;height:720px;background:radial-gradient(closest-side,rgba(214,69,122,.16),transparent 70%);pointer-events:none}
+  .hero::after{content:"";position:absolute;left:-200px;bottom:-260px;width:620px;height:620px;background:radial-gradient(closest-side,rgba(107,63,160,.12),transparent 70%);pointer-events:none}
+  .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:7px 15px 7px 8px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:13.5px;font-weight:600;color:var(--violet);box-shadow:0 6px 18px -10px rgba(46,24,48,.25)}
+  .eyebrow i{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--blush);font-style:normal}
+  .eyebrow i svg{width:14px;height:14px;color:var(--rose)}
+  h1{font-family:'Fraunces',Georgia,serif;font-weight:600;color:var(--plum);font-size:clamp(44px,6.4vw,82px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
+  h1 em{font-style:italic;font-weight:400;color:var(--rose)}
+  .lead{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:33ch;margin:0 0 34px}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .hero-feats{display:flex;flex-wrap:wrap;gap:10px 22px;margin:38px 0 0;padding:0;list-style:none;font-size:14.5px;font-weight:500;color:var(--ink)}
+  .hero-feats li{display:flex;align-items:center;gap:8px}
+  .hero-feats svg{width:18px;height:18px;color:var(--gold)}
+
+  .hero-visual{position:relative;justify-self:center;width:min(100%,460px)}
+  .arch{position:relative;border-radius:240px 240px 28px 28px;overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow);background:var(--blush)}
+  .arch img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+  .arch::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.4)}
+  .ring{position:absolute;inset:-18px;border:1.5px dashed rgba(199,154,62,.55);border-radius:258px 258px 40px 40px;pointer-events:none}
+  .float{position:absolute;display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-radius:16px;box-shadow:0 18px 40px -18px rgba(46,24,48,.45);font-size:14px;line-height:1.25;font-weight:600;color:var(--plum)}
+  .float small{display:block;font-weight:500;color:var(--muted);font-size:12.5px}
+  .float .ic{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--blush);color:var(--rose);flex:none}
+  .float .ic svg{width:20px;height:20px}
+  .float.f1{left:-46px;top:22%;animation:bob 6s ease-in-out infinite}
+  .float.f2{right:-38px;bottom:16%;animation:bob 6s ease-in-out -3s infinite}
+  .float.f3{right:-10px;top:-6px;padding:10px 14px;background:var(--plum);color:#fff;border-radius:999px;animation:bob 7s ease-in-out -1.5s infinite}
+  .float.f3 b{color:var(--gold)}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+  /* ---------- marquee ---------- */
+  .marquee{background:var(--plum);color:#f6e9ee;overflow:hidden;padding:20px 0;border-block:1px solid rgba(255,255,255,.06)}
+  .marquee-track{display:flex;gap:44px;width:max-content;animation:scroll 38s linear infinite}
+  .marquee span{display:inline-flex;align-items:center;gap:44px;font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:clamp(20px,2.4vw,28px);white-space:nowrap}
+  .marquee span::after{content:"✦";font-style:normal;font-size:16px;color:var(--gold)}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  /* ---------- secciones ---------- */
+  section{position:relative}
+  .section{padding:clamp(80px,10vw,128px) 0}
+  .kicker{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rose)}
+  .kicker::before{content:"";width:28px;height:1.5px;background:currentColor}
+  h2{font-family:'Fraunces',Georgia,serif;font-weight:600;color:var(--plum);font-size:clamp(34px,4.6vw,56px);line-height:1.06;letter-spacing:-.02em;margin:16px 0 18px}
+  h2 em{font-style:italic;font-weight:400;color:var(--rose)}
+  .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:54px}
+  .section-head p{max-width:42ch;color:var(--muted);margin:0}
+
+  /* aprender */
+  .topics{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:t}
+  .topic{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px 32px;transition:transform .35s ease, box-shadow .35s ease, border-color .35s}
+  .topic:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--petal)}
+  .topic .num{position:absolute;top:22px;right:24px;font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:15px;color:#c8b3bd}
+  .topic .ic{display:grid;place-items:center;width:56px;height:56px;border-radius:18px;background:linear-gradient(135deg,var(--blush),#efe2f6);color:var(--violet);margin-bottom:26px}
+  .topic .ic svg{width:26px;height:26px}
+  .topic h3{font-family:'Fraunces',Georgia,serif;font-size:24px;font-weight:600;color:var(--plum);margin:0 0 8px;line-height:1.15}
+  .topic p{margin:0;color:var(--muted);font-size:15.5px}
+
+  /* galería */
+  .gallery-band{background:linear-gradient(180deg,var(--cream),var(--blush))}
+  .gallery{display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:repeat(2,minmax(220px,1fr));gap:18px}
+  .tile{position:relative;border-radius:var(--radius);overflow:hidden;background:var(--petal) url('img/ig/post11.jpg') no-repeat;background-size:200% auto;box-shadow:0 16px 40px -24px rgba(46,24,48,.5);transition:transform .5s ease}
+  .tile:hover{transform:scale(1.015)}
+  .tile.big{grid-row:span 2;background-image:url('img/ig/post12.jpg');background-size:auto 165%;background-position:38% 62%}
+  .tile.t1{background-position:0 24%}
+  .tile.t2{background-position:100% 24%}
+  .tile.t3{background-position:0 100%}
+  .tile.t4{background-position:100% 100%}
+  .tile figcaption{position:absolute;left:14px;bottom:14px;padding:7px 13px;border-radius:999px;background:rgba(255,255,255,.92);font-size:13px;font-weight:600;color:var(--plum)}
+  .tile.big::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(46,24,48,0) 55%,rgba(46,24,48,.55))}
+  .tile.big figcaption{background:var(--rose);color:#fff}
+
+  /* video */
+  .video-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:center}
+  .yt{position:relative;width:100%;aspect-ratio:16/9;border-radius:28px;overflow:hidden;box-shadow:var(--shadow);border:8px solid #fff;outline:1px solid var(--line);background:var(--plum)}
+  .yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .yt-btn{all:unset;position:absolute;inset:0;cursor:pointer;display:block}
+  .yt-btn:focus-visible{outline:3px solid var(--violet);outline-offset:-6px}
+  .yt-btn>img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+  .yt-btn:hover>img{transform:scale(1.04)}
+  .yt-btn::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(46,24,48,.05) 40%,rgba(46,24,48,.7))}
+  .yt-btn:hover .play{transform:scale(1.08);box-shadow:0 0 0 18px rgba(255,255,255,.2)}
+  .yt .tag{position:absolute;z-index:2;left:20px;right:20px;bottom:18px;color:#fff;font-weight:600;font-size:15px;display:flex;align-items:center;gap:10px}
+  .yt .tag img{width:34px;height:34px;border-radius:50%;border:2px solid #fff}
+  .phone{position:relative;justify-self:center;width:min(100%,340px);aspect-ratio:9/16;border-radius:38px;overflow:hidden;box-shadow:var(--shadow);border:8px solid #fff;outline:1px solid var(--line);background:var(--plum);text-decoration:none}
+  .phone img,.phone video{width:100%;height:100%;object-fit:cover}
+  .phone::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(46,24,48,0) 50%,rgba(46,24,48,.75))}
+  .play{position:absolute;z-index:2;left:50%;top:50%;width:82px;height:82px;margin:-41px 0 0 -41px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.95);color:var(--rose);box-shadow:0 0 0 12px rgba(255,255,255,.25);transition:transform .3s, box-shadow .3s}
+  .play svg{width:30px;height:30px;margin-left:4px}
+  .phone:hover .play{transform:scale(1.08);box-shadow:0 0 0 18px rgba(255,255,255,.2)}
+  .phone .tag{position:absolute;z-index:2;left:18px;right:18px;bottom:20px;color:#fff;font-weight:600;font-size:14.5px;display:flex;align-items:center;gap:10px}
+  .phone .tag img{width:34px;height:34px;border-radius:50%;border:2px solid #fff}
+  .checks{list-style:none;padding:0;margin:28px 0 36px;display:grid;gap:14px}
+  .checks li{display:flex;gap:14px;align-items:flex-start;font-size:17px}
+  .checks .tick{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--blush);color:var(--rose)}
+  .checks .tick svg{width:15px;height:15px}
+
+  /* para vos */
+  .forvos{background:var(--plum);color:#f3e7ee;overflow:hidden}
+  .forvos::before{content:"";position:absolute;right:-180px;top:-180px;width:560px;height:560px;border-radius:50%;background:radial-gradient(closest-side,rgba(214,69,122,.35),transparent)}
+  .forvos .wrap{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .forvos h2{color:#fff}
+  .forvos h2 em{color:#f59ec0}
+  .forvos .kicker{color:#f59ec0}
+  .forvos p.big{font-size:clamp(19px,2vw,23px);line-height:1.5;color:#f3e7ee;margin:0 0 30px;max-width:30ch}
+  .pills{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .pill{display:flex;align-items:center;gap:14px;padding:20px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);font-weight:600;color:#fff;transition:background .3s, transform .3s}
+  .pill:hover{background:rgba(255,255,255,.1);transform:translateY(-3px)}
+  .pill .ic{display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:rgba(245,158,192,.16);color:#f59ec0;flex:none}
+  .pill .ic svg{width:22px;height:22px}
+
+  /* oferta */
+  .offer{display:grid;grid-template-columns:1fr 1fr;border-radius:32px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
+  .offer-media{position:relative;background:linear-gradient(160deg,#f3e9fb,var(--blush));display:grid;place-items:center;padding:40px}
+  .bundle{width:100%;max-width:480px;aspect-ratio:1.72;background:url('img/ig/post01.jpg') no-repeat 49.6% 32.6%/165% auto;mix-blend-mode:multiply}
+  .badge{position:absolute;top:26px;left:26px;width:108px;height:108px;border-radius:50%;background:var(--rose);color:#fff;display:grid;place-items:center;text-align:center;line-height:1;font-weight:700;box-shadow:0 12px 26px -10px rgba(214,69,122,.8);transform:rotate(-10deg)}
+  .badge b{display:block;font-family:'Fraunces',Georgia,serif;font-size:36px}
+  .badge small{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase}
+  .offer-body{padding:clamp(34px,5vw,60px)}
+  .offer-body h2{font-size:clamp(32px,3.6vw,46px)}
+  .offer-list{list-style:none;padding:0;margin:26px 0 34px;display:grid;gap:0}
+  .offer-list li{display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px dashed var(--line);font-weight:500}
+  .offer-list li span:last-child{color:var(--violet);font-weight:700;text-align:right}
+
+  /* instagram */
+  .ig-card{display:grid;grid-template-columns:auto 1fr auto;gap:36px;align-items:center;padding:clamp(28px,4vw,48px);border-radius:32px;background:linear-gradient(135deg,#fff,var(--blush));border:1px solid var(--line)}
+  .ig-avatar{position:relative;width:132px;height:132px;border-radius:50%;padding:4px;background:conic-gradient(from 210deg,#f9ce34,#ee2a7b,#6228d7,#f9ce34)}
+  .ig-avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:4px solid #fff}
+  .ig-handle{font-weight:700;color:var(--plum);font-size:20px;display:flex;align-items:center;gap:8px;text-decoration:none}
+  .ig-handle:hover{color:var(--rose)}
+  .ig-bio{margin:10px 0 0;color:var(--ink);font-size:16px;line-height:1.75}
+  .bio-links{display:grid;gap:12px;min-width:280px}
+  .bio-link{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:16px;background:#fff;border:1px solid var(--line);text-decoration:none;font-weight:600;color:var(--plum);transition:transform .25s, border-color .25s, box-shadow .25s}
+  .bio-link:hover{transform:translateX(4px);border-color:var(--petal);box-shadow:0 12px 26px -16px rgba(46,24,48,.4)}
+  .bio-link .ic{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--blush);color:var(--rose);flex:none}
+  .bio-link .ic svg{width:19px;height:19px}
+  .bio-link small{display:block;font-weight:500;color:var(--muted);font-size:12.5px}
+  .bio-link .arrow{margin-left:auto;width:18px;height:18px;color:var(--muted)}
+  .ig-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:22px}
+  .ig-strip a{position:relative;aspect-ratio:9/14;border-radius:16px;overflow:hidden;display:block}
+  .ig-strip img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .ig-strip a:hover img{transform:scale(1.06)}
+  .ig-strip a::after{content:"";position:absolute;inset:0;background:rgba(46,24,48,0);transition:background .3s}
+  .ig-strip a:hover::after{background:rgba(46,24,48,.18)}
+
+  /* cierre */
+  .closing{text-align:center;padding:clamp(90px,11vw,140px) 0;background:radial-gradient(60% 80% at 50% 0%,var(--blush),var(--cream))}
+  .closing h2{font-size:clamp(40px,6vw,74px);margin:18px auto 20px;max-width:14ch}
+  .closing p{color:var(--muted);max-width:44ch;margin:0 auto 36px;font-size:18px}
+  .closing .note{justify-content:center}
+
+  footer{background:var(--plum);color:#cdb9c6;padding:56px 0 110px;font-size:14px}
+  footer .wrap{display:grid;gap:26px}
+  .foot-top{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .foot-top .brand span{color:#fff}
+  .foot-top .brand small{color:#f59ec0}
+  .foot-links{display:flex;gap:22px;flex-wrap:wrap}
+  .foot-links a{text-decoration:none;color:#ead9e3}
+  .foot-links a:hover{color:#fff}
+  .disclosure{max-width:78ch;line-height:1.7;margin:0}
+  .copy{font-size:13px;color:#a891a1}
+
+  /* barra CTA móvil */
+  .mobile-cta{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:none;align-items:center;justify-content:space-between;gap:12px;padding:10px 10px 10px 18px;border-radius:999px;background:rgba(46,24,48,.94);backdrop-filter:blur(10px);color:#fff;box-shadow:0 18px 40px -16px rgba(0,0,0,.5);transform:translateY(140%);transition:transform .4s ease}
+  .mobile-cta.show{transform:none}
+  .mobile-cta p{margin:0;font-size:13.5px;line-height:1.25}
+  .mobile-cta p b{display:block;font-size:14.5px}
+  .mobile-cta .btn{min-height:46px;padding:0 20px;font-size:14.5px}
+
+  /* animación de entrada */
+  .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1)}
+  .js .reveal.in{opacity:1;transform:none}
+  .js .d1{transition-delay:.08s}.js .d2{transition-delay:.16s}.js .d3{transition-delay:.24s}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1020px){
+    .hero .wrap,.video-wrap,.forvos .wrap,.offer{grid-template-columns:1fr}
+    .hero{padding-top:44px}
+    .hero-visual{margin-top:20px;width:min(100%,400px)}
+    .topics{grid-template-columns:repeat(2,1fr)}
+    .ig-card{grid-template-columns:auto 1fr}
+    .bio-links{grid-column:1/-1;min-width:0}
+    .video-wrap .yt{order:2}
+  }
+  @media (max-width:760px){
+    :root{--wrap:calc(100% - 32px)}
+    body{font-size:16px}
+    .nav-links a:not(.btn):not(.ig-icon){display:none}
+    .nav .wrap{height:64px}
+    .brand span{font-size:17px;white-space:nowrap}
+    .brand img{width:36px;height:36px}
+    .nav-links{gap:10px}
+    .nav-links .btn{min-height:40px;padding:0 16px;font-size:13.5px;white-space:nowrap}
+    .tile.big{background-size:auto 210%;background-position:30% 57%}
+    .topbar span+span::before{display:none}
+    .topbar .wrap{gap:4px 14px;font-size:12.5px}
+    .float.f1{left:-8px}
+    .float.f2{right:-8px}
+    .float.f3{right:4px}
+    .gallery{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+    .tile{aspect-ratio:1/1.2}
+    .tile.big{grid-column:1/-1;grid-row:auto;aspect-ratio:4/3}
+    .pills{grid-template-columns:1fr}
+    .ig-card{grid-template-columns:1fr;text-align:center;justify-items:center}
+    .ig-handle{justify-content:center}
+    .bio-links{width:100%;text-align:left}
+    .ig-strip{grid-template-columns:repeat(3,1fr)}
+    .mobile-cta{display:flex}
+    .badge{width:88px;height:88px;top:16px;left:16px}
+    .badge b{font-size:28px}
+    .hero-actions .btn{width:100%}
+  }
+  @media (max-width:420px){
+    .nav-links .btn{display:none}
+    .brand span{font-size:16px}
+    .topics{grid-template-columns:1fr}
+    .float{font-size:12.5px;padding:9px 12px}
+    .float .ic{width:32px;height:32px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .js .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- Iconos SVG reutilizables -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6L4.5 18.5A2 2 0 0 0 6.2 21.5h11.6a2 2 0 0 0 1.7-3L14 9V3"/><path d="M7.5 15h9"/></symbol>
+    <symbol id="i-mix" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16l-1.5 10a2 2 0 0 1-2 1.7h-9a2 2 0 0 1-2-1.7z"/><path d="M14 9l4-6"/><path d="M8 14c1.3 1 2.7 1 4 0s2.7-1 4 0"/></symbol>
+    <symbol id="i-brush" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18.4 2.6a2 2 0 0 1 3 3L12 15l-3-3z"/><path d="M9 12c-2.8 0-4.5 1.6-4.5 4 0 1.7-.9 2.8-2.5 3.5 1 .9 2.6 1.5 4.5 1.5 3.3 0 5.5-2.2 5.5-5.5"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 21.5l8.8-8.8a5 5 0 0 0 0-7.1z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15a1 1 0 0 0 1.5.9l12-7.5a1 1 0 0 0 0-1.8l-12-7.5A1 1 0 0 0 7 4.5z"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+    <symbol id="i-steps" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4v-5h4v-5h4V5h4"/></symbol>
+    <symbol id="i-gem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20M12 21L8 9l4-6 4 6z"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.3"/><circle cx="18" cy="20" r="1.3"/><path d="M2.5 3h2.6l2.4 12h11.3l2-8H6.2"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3.2-3.2a4.5 4.5 0 0 0-6.4-6.4L12 5.6"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3.2 3.2a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>✦ Curso <b>100% online</b></span>
+    <span>Aprendé <b>paso a paso</b> desde cero</span>
+    <span>Pago único · <b>acceso de por vida</b></span>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Resina Creativa Jujuy, inicio">
+      <img src="img/ig/perfil.jpg" alt="" width="42" height="42">
+      <span>Resina Creativa<small>Jujuy</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#aprendizaje">Qué vas a aprender</a>
+      <a href="#para-vos">¿Es para vos?</a>
+      <a href="#instagram">Instagram</a>
+      <a class="ig-icon" href="https://www.instagram.com/resina.creativa.jujuy/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Resina Creativa Jujuy"><svg><use href="#i-ig"/></svg></a>
+      <a class="btn btn-primary" href="https://pay.hotmart.com/M89035161A?off=kdhxo4r6&amp;checkoutMode=10&amp;bid=1795040994983" target="_blank" rel="noopener noreferrer">Conocer el curso</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow reveal"><i><svg><use href="#i-spark"/></svg></i>Curso online de resina epóxica</span>
+        <h1 id="hero-title" class="reveal d1">Aprendé resina epóxica <em>desde cero</em></h1>
+        <p class="lead reveal d2">Un curso online para conocer los materiales, aprender las técnicas básicas y empezar a crear tus propios proyectos.</p>
+        <div class="reveal d3">
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://pay.hotmart.com/M89035161A?off=kdhxo4r6&amp;checkoutMode=10&amp;bid=1795040994983" target="_blank" rel="noopener noreferrer" aria-label="Conocer el curso en Hotmart (se abre en una pestaña nueva)">Conocer el curso <svg><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost" href="#aprendizaje">Qué vas a aprender</a>
+          </div>
+          <p class="note"><svg><use href="#i-lock"/></svg>La compra se realiza en Hotmart.</p>
+          <ul class="hero-feats">
+            <li><svg><use href="#i-spark"/></svg>Sin experiencia previa</li>
+            <li><svg><use href="#i-spark"/></svg>A tu ritmo</li>
+            <li><svg><use href="#i-spark"/></svg>Ideas para emprender</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal d2">
+        <div class="ring" aria-hidden="true"></div>
+        <div class="arch"><img src="img/ig/post06.jpg" alt="Profesora de Resina Creativa Jujuy mostrando un posavasos de resina con flores" width="361" height="640"></div>
+        <div class="float f1"><span class="ic"><svg><use href="#i-monitor"/></svg></span><div>Curso 100% online<small>Desde tu casa</small></div></div>
+        <div class="float f2"><span class="ic"><svg><use href="#i-heart"/></svg></span><div>Piezas únicas<small>Hechas por vos</small></div></div>
+        <div class="float f3">✦ <b>Pago único</b></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Flores naturales</span><span>Posavasos</span><span>Llaveros</span><span>Bandejas</span><span>Corazones de resina</span><span>Decoración para tu hogar</span><span>Emprendé desde casa</span>
+      <span>Flores naturales</span><span>Posavasos</span><span>Llaveros</span><span>Bandejas</span><span>Corazones de resina</span><span>Decoración para tu hogar</span><span>Emprendé desde casa</span>
+    </div>
+  </div>
+
+  <!-- QUÉ VAS A APRENDER -->
+  <section class="section" id="aprendizaje" aria-labelledby="learning-title">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="kicker reveal">Para empezar</span>
+          <h2 id="learning-title" class="reveal d1">¿Qué vas a <em>aprender?</em></h2>
+        </div>
+        <p class="reveal d2">Todo lo esencial, en orden y paso a paso, para que pases de no saber nada a crear tus primeras piezas.</p>
+      </div>
+      <div class="topics">
+        <article class="topic reveal"><span class="num">01</span><div class="ic"><svg><use href="#i-flask"/></svg></div><h3>Materiales</h3><p>Conocé qué necesitás para empezar y para qué sirve cada cosa.</p></article>
+        <article class="topic reveal d1"><span class="num">02</span><div class="ic"><svg><use href="#i-mix"/></svg></div><h3>Preparación y mezcla</h3><p>Cómo preparar y mezclar la resina correctamente.</p></article>
+        <article class="topic reveal d2"><span class="num">03</span><div class="ic"><svg><use href="#i-brush"/></svg></div><h3>Técnicas básicas</h3><p>Las técnicas fundamentales para trabajar con seguridad y prolijidad.</p></article>
+        <article class="topic reveal d3"><span class="num">04</span><div class="ic"><svg><use href="#i-gem"/></svg></div><h3>Primeros proyectos</h3><p>Empezá a crear tus propias piezas: posavasos, llaveros, bandejas y más.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="section gallery-band" aria-labelledby="gallery-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="kicker reveal">Inspiración</span>
+          <h2 id="gallery-title" class="reveal d1">Flores, color y <em>creatividad</em></h2>
+        </div>
+        <p class="reveal d2">Transformá flores naturales en piezas únicas. Lo que hoy es un hobby, mañana puede ser algo que vendas.</p>
+      </div>
+      <div class="gallery">
+        <figure class="tile big reveal" style="margin:0" role="img" aria-label="Resina vertida sobre un molde con flores secas"><figcaption>Cada detalle se vuelve arte</figcaption></figure>
+        <figure class="tile t1 reveal d1" style="margin:0" role="img" aria-label="Bandeja de resina con flores"><figcaption>Bandejas</figcaption></figure>
+        <figure class="tile t2 reveal d2" style="margin:0" role="img" aria-label="Posavasos de resina con flores en la mano"><figcaption>Posavasos</figcaption></figure>
+        <figure class="tile t3 reveal d1" style="margin:0" role="img" aria-label="Llaveros y piezas de resina con flores"><figcaption>Llaveros</figcaption></figure>
+        <figure class="tile t4 reveal d2" style="margin:0" role="img" aria-label="Corazón de resina con flores"><figcaption>Corazones</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="section" aria-labelledby="video-title">
+    <div class="wrap video-wrap">
+      <!-- Video de YouTube: "Crea accesorios con resina" (ID PHZVzjyomOs). Para cambiarlo, reemplazá el ID en data-yt. -->
+      <div class="yt reveal" data-yt="PHZVzjyomOs">
+        <button type="button" class="yt-btn" aria-label="Reproducir video: Crea accesorios con resina">
+          <img src="https://i.ytimg.com/vi/PHZVzjyomOs/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+          <span class="play"><svg><use href="#i-play"/></svg></span>
+          <span class="tag"><img src="img/ig/perfil.jpg" alt="">Crea accesorios con resina</span>
+        </button>
+      </div>
+      <div>
+        <span class="kicker reveal">Mirá cómo es</span>
+        <h2 id="video-title" class="reveal d1">Creá piezas únicas <em>con tus manos</em></h2>
+        <p class="reveal d2" style="color:var(--muted);max-width:44ch;margin:0">Un espacio para aprender, inspirarte y animarte a crear. Mirá los videos y descubrí todo lo que podés hacer con resina epóxica.</p>
+        <ul class="checks reveal d2">
+          <li><span class="tick"><svg><use href="#i-check"/></svg></span>Aprendé resina epoxi</li>
+          <li><span class="tick"><svg><use href="#i-check"/></svg></span>Creá piezas únicas</li>
+          <li><span class="tick"><svg><use href="#i-check"/></svg></span>Decorá tu hogar</li>
+          <li><span class="tick"><svg><use href="#i-check"/></svg></span>Emprendé desde casa</li>
+        </ul>
+        <div class="reveal d3"><a class="btn btn-primary" href="https://pay.hotmart.com/M89035161A?off=kdhxo4r6&amp;checkoutMode=10&amp;bid=1795040994983" target="_blank" rel="noopener noreferrer">Conocer el curso <svg><use href="#i-arrow"/></svg></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ¿ES PARA VOS? -->
+  <section class="section forvos" id="para-vos" aria-labelledby="audience-title">
+    <div class="wrap">
+      <div>
+        <span class="kicker reveal">¿Es para vos?</span>
+        <h2 id="audience-title" class="reveal d1">Si nunca trabajaste con resina, <em>este es tu lugar</em></h2>
+        <p class="big reveal d2">Está pensado para personas sin experiencia que quieren aprender paso a paso.</p>
+        <div class="reveal d3"><a class="btn btn-light" href="https://pay.hotmart.com/M89035161A?off=kdhxo4r6&amp;checkoutMode=10&amp;bid=1795040994983" target="_blank" rel="noopener noreferrer">Quiero empezar <svg><use href="#i-arrow"/></svg></a></div>
+      </div>
+      <div class="pills">
+        <div class="pill reveal"><span class="ic"><svg><use href="#i-cap"/></svg></span>Curso 100% online</div>
+        <div class="pill reveal d1"><span class="ic"><svg><use href="#i-steps"/></svg></span>Paso a paso desde cero</div>
+        <div class="pill reveal d2"><span class="ic"><svg><use href="#i-bulb"/></svg></span>Ideas para crear y vender</div>
+        <div class="pill reveal d3"><span class="ic"><svg><use href="#i-heart"/></svg></span>Acompañamiento y soporte</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTA -->
+  <section class="section" aria-labelledby="offer-title">
+    <div class="wrap">
+      <div class="offer reveal">
+        <div class="offer-media">
+          <div class="badge"><div><b>50%</b><small>off</small></div></div>
+          <div class="bundle" role="img" aria-label="Curso online Diseña y crea con resina con sus materiales y bonos"></div>
+        </div>
+        <div class="offer-body">
+          <span class="kicker">Promoción especial</span>
+          <h2 id="offer-title">Diseñá y creá <em>con resina</em></h2>
+          <p style="color:var(--muted);margin:0">Todo lo que necesitás para dar tus primeros pasos, en un solo curso.</p>
+          <ul class="offer-list">
+            <li><span>Formato</span><span>100% online</span></li>
+            <li><span>Nivel</span><span>Desde cero</span></li>
+            <li><span>Pago</span><span>Pago único</span></li>
+            <li><span>Acceso</span><span>De por vida</span></li>
+          </ul>
+          <a class="btn btn-primary" style="width:100%" href="https://pay.hotmart.com/M89035161A?off=kdhxo4r6&amp;checkoutMode=10&amp;bid=1795040994983" target="_blank" rel="noopener noreferrer" aria-label="Conocer el curso en Hotmart (se abre en una pestaña nueva)">Conocer el curso <svg><use href="#i-arrow"/></svg></a>
+          <p class="note" style="justify-content:center"><svg><use href="#i-lock"/></svg>La compra se realiza en Hotmart.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <section class="section" id="instagram" aria-labelledby="ig-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="kicker reveal">Seguinos</span>
+          <h2 id="ig-title" class="reveal d1">Inspiración diaria <em>en Instagram</em></h2>
+        </div>
+      </div>
+      <div class="ig-card reveal">
+        <a class="ig-avatar" href="https://www.instagram.com/resina.creativa.jujuy/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Instagram"><img src="img/ig/perfil.jpg" alt="Foto de perfil de Resina Creativa Jujuy" width="132" height="132"></a>
+        <div>
+          <a class="ig-handle" href="https://www.instagram.com/resina.creativa.jujuy/" target="_blank" rel="noopener noreferrer"><svg width="20" height="20"><use href="#i-ig"/></svg>@resina.creativa.jujuy</a>
+          <p class="ig-bio">🌸 Creá piezas únicas con resina epóxica<br>✨ Aprendé desde cero, paso a paso<br>💡 Ideas para emprender con creatividad<br>👇 Conocé el curso online</p>
+        </div>
+        <div class="bio-links">
+          <!-- Links de la biografía de Instagram -->
+          <a class="bio-link" href="https://hotmart.com/es/marketplace/productos/resina-epoxica-desde-cero-crea-aprende-y-emprende-guia-practica/Q108338438W?utm_medium=social&amp;utm_source=ig&amp;utm_content=link_in_bio" target="_blank" rel="noopener noreferrer"><span class="ic"><svg><use href="#i-cart"/></svg></span><span>Resina epóxica desde cero<small>Guía práctica · Hotmart</small></span><svg class="arrow"><use href="#i-arrow"/></svg></a>
+          <a class="bio-link" href="https://xn--diseaycrea-w9a.com/resina-con-yuli?ref=A107674081Y" target="_blank" rel="noopener noreferrer"><span class="ic"><svg><use href="#i-gem"/></svg></span><span>Diseñá y creá con resina<small>diseñaycrea.com</small></span><svg class="arrow"><use href="#i-arrow"/></svg></a>
+          <a class="bio-link" href="https://www.instagram.com/resina.creativa.jujuy/" target="_blank" rel="noopener noreferrer"><span class="ic"><svg><use href="#i-ig"/></svg></span><span>Seguir en Instagram<small>@resina.creativa.jujuy</small></span><svg class="arrow"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+      <div class="ig-strip">
+        <a class="reveal" href="https://www.instagram.com/resina.creativa.jujuy/" target="_blank" rel="noopener noreferrer"><img src="img/ig/post11.jpg" alt="Piezas de resina con flores" loading="lazy"></a>
+        <a class="reveal d1" href="https://www.instagram.com/resina.creativa.jujuy/" target="_blank" rel="noopener noreferrer"><img src="img/ig/post04.jpg" alt="Video de Resina Creativa Jujuy" loading="lazy"></a>
+        <a class="reveal d2" href="https://www.instagram.com/resina.creativa.jujuy/" target="_blank" rel="noopener noreferrer"><img src="img/ig/post09.jpg" alt="Transformá flores en piezas únicas" loading="lazy"></a>
+        <a class="reveal d1" href="https://www.instagram.com/resina.creativa.jujuy/" target="_blank" rel="noopener noreferrer"><img src="img/ig/post03.jpg" alt="Video de Resina Creativa Jujuy" loading="lazy"></a>
+        <a class="reveal d2" href="https://www.instagram.com/resina.creativa.jujuy/" target="_blank" rel="noopener noreferrer"><img src="img/ig/post12.jpg" alt="Aprendé resina epóxica desde cero" loading="lazy"></a>
+        <a class="reveal d3" href="https://www.instagram.com/resina.creativa.jujuy/" target="_blank" rel="noopener noreferrer"><img src="img/ig/post02.jpg" alt="Profesora de Resina Creativa Jujuy" loading="lazy"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section class="closing" aria-labelledby="closing-title">
+    <div class="wrap">
+      <span class="kicker reveal">Tu primer paso</span>
+      <h2 id="closing-title" class="reveal d1">Empezá por <em>lo esencial</em></h2>
+      <p class="reveal d2">Materiales, mezcla, técnicas básicas y tus primeros proyectos. Todo en un curso online pensado para empezar desde cero.</p>
+      <div class="reveal d3">
+        <a class="btn btn-primary" href="https://pay.hotmart.com/M89035161A?off=kdhxo4r6&amp;checkoutMode=10&amp;bid=1795040994983" target="_blank" rel="noopener noreferrer" aria-label="Conocer el curso en Hotmart (se abre en una pestaña nueva)">Conocer el curso <svg><use href="#i-arrow"/></svg></a>
+        <p class="note"><svg><use href="#i-lock"/></svg>La compra se realiza en Hotmart.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="brand" href="#inicio"><img src="img/ig/perfil.jpg" alt="" width="42" height="42"><span>Resina Creativa<small>Jujuy</small></span></a>
+      <nav class="foot-links" aria-label="Pie de página">
+        <a href="#aprendizaje">Qué vas a aprender</a>
+        <a href="#para-vos">¿Es para vos?</a>
+        <a href="https://www.instagram.com/resina.creativa.jujuy/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://pay.hotmart.com/M89035161A?off=kdhxo4r6&amp;checkoutMode=10&amp;bid=1795040994983" target="_blank" rel="noopener noreferrer">Conocer el curso</a>
+      </nav>
+    </div>
+    <p class="disclosure">Este sitio utiliza un enlace de afiliado de Hotmart. Si realizás una compra desde este enlace, Resina Creativa Jujuy podría recibir una comisión, sin costo adicional para vos.</p>
+    <p class="copy">© <span id="year">2026</span> Resina Creativa Jujuy</p>
+  </div>
+</footer>
+
+<div class="mobile-cta" id="mcta" aria-hidden="true">
+  <p><b>Resina desde cero</b>Curso 100% online</p>
+  <a class="btn btn-primary" href="https://pay.hotmart.com/M89035161A?off=kdhxo4r6&amp;checkoutMode=10&amp;bid=1795040994983" target="_blank" rel="noopener noreferrer" tabindex="-1">Conocer el curso</a>
+</div>
+
+<script>
+  (function(){
+    var y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
+    var nav=document.getElementById('nav'), m=document.getElementById('mcta'), hero=document.querySelector('.hero'), closing=document.querySelector('.closing');
+    function onScroll(){
+      nav.classList.toggle('scrolled', window.scrollY>8);
+      var past=hero.getBoundingClientRect().bottom<0, atEnd=closing.getBoundingClientRect().top<window.innerHeight;
+      m.classList.toggle('show', past && !atEnd);
+    }
+    window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+    document.querySelectorAll('.yt').forEach(function(box){
+      var b=box.querySelector('.yt-btn');
+      b.addEventListener('click',function(){
+        var f=document.createElement('iframe');
+        f.src='https://www.youtube-nocookie.com/embed/'+box.dataset.yt+'?autoplay=1&rel=0';
+        f.title='Crea accesorios con resina';
+        f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        f.allowFullscreen=true;
+        box.replaceChild(f,b);
+      });
+    });
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+    var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    els.forEach(function(e){io.observe(e)});
+  })();
+</script>
+</body>
+</html>
